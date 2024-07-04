@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="flex items-center justify-start gap-5 my-5 flex-col sm:flex-row">
+    <section class="flex items-center justify-start gap-3 my-5 sm:flex-row">
         <img src="{{ asset('/img/profile-1.jpg') }}" alt="Syahreza Satria" class="rounded-full w-[80px] lg:w-[96px]">
         <h1 class="font-bold text-center sm:text-left lg:text-2xl sm:text-xl">Syahreza Satria</h1>
     </section>
@@ -52,14 +52,14 @@
                     </div>
                     <div class="p-4 flex-grow">
                         <p class="text-base font-extrabold text-gray-600 mb-3">{{ $gear->brand }}</p>
-                        <h3 class="font-semibold text-xl mb-2">{{ $gear->model }}</h3>
+                        <h3 class="font-semibold text-xl mb-2 uppercase">{{ $gear->model }}</h3>
                         <p class="text-sm text-gray-500 mb-2">{{ $gear->type }}</p>
                         <p class="text-gray-600 mb-4">{{ $gear->description }}</p>
                     </div>
                     @if ($gear->link)
                         <div class="p-4">
                             <a href="{{ $gear->link }}" target="_blank"
-                                class="text-blue-600 hover:text-blue-800 font-semibold">Buy Now</a>
+                                class="text-blue-600 hover:text-blue-800 font-semibold">Check the store</a>
                         </div>
                     @endif
                 </div>

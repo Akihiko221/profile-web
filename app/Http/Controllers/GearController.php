@@ -9,70 +9,11 @@ class GearController extends Controller
 {
     public function index()
     {
-        $gears = Gear::all();
+        $gears = Gear::all()->sortBy(function($gear) {
+            $order = ['kamera' => 1, 'lensa' => 2, 'lighting' => 3, 'microphone' => 4, 'laptop' => 5, 'keyboard' => 6, 'monitor' => 7, 'mouse' => 8];
+            return $order[$gear->type] ?? 9; // default to 9 if type is not found
+        });
+
         return view('gear', compact('gears'));
-    }
-
-    public function dashboardIndex()
-    {
-        $gears = Gear::all();
-        return view('admin.gears.index', compact('gears'));
-    }
-
-    public function create()
-    {
-        return view('admin.gears.create');
-    }
-
-    public function store(Request $request)
-    {
-        $data = $request->validate([
-            'brand' => 'required|string|max:255',
-            'model' => 'required|string|max:255',
-            'type' => 'required|string|max:255',
-            'description' => 'required|string',
-            'image' => 'required|image',
-            'link' => 'nullable|url',
-        ]);
-
-        $data['image'] = $request->file('image')->store('gears');
-
-        Gear::create($data);
-
-        return redirect()->back()->with('success', 'Item telah berhasil ditambahkan');
-    }
-
-    public function edit(Gear $gear)
-    {
-        return view('admin.gears.edit', compact('gear'));
-    }
-
-    public function update(Request $request, Gear $gear)
-    {
-        $data = $request->validate([
-            'brand' => 'required|string|max:255',
-            'model' => 'required|string|max:255',
-            'type' => 'required|string|max:255',
-            'description' => 'required|string',
-            'image' => 'nullable|image',
-            'link' => 'nullable|url',
-        ]);
-
-        if ($request->hasFile('image')) {
-            Storage::delete($gear->image);
-            $data['image'] = $request->file('image')->store('gears');
-        }
-
-        $gear->update($data);
-
-        return redirect()->route('admin.dashboard.gear');
-    }
-
-    public function destroy(Gear $gear)
-    {
-        Storage::delete($gear->image);
-        $gear->delete();
-
-        return redirect()->route('admin.dashboard.gear');
     }
 }

@@ -57,8 +57,11 @@
                     <option value="kamera" {{ old('type') == 'kamera' ? 'selected' : '' }}>Kamera</option>
                     <option value="lensa" {{ old('type') == 'lensa' ? 'selected' : '' }}>Lensa</option>
                     <option value="lighting" {{ old('type') == 'lighting' ? 'selected' : '' }}>Lighting</option>
-                    <option value="mic" {{ old('type') == 'mic' ? 'selected' : '' }}>Mic</option>
-                    <option value="komputer" {{ old('type') == 'komputer' ? 'selected' : '' }}>Komputer</option>
+                    <option value="microphone" {{ old('type') == 'microphone' ? 'selected' : '' }}>Microphone</option>
+                    <option value="laptop" {{ old('type') == 'laptop' ? 'selected' : '' }}>Laptop</option>
+                    <option value="keyboard" {{ old('type') == 'laptop' ? 'selected' : '' }}>Keyboard</option>
+                    <option value="monitor" {{ old('type') == 'laptop' ? 'selected' : '' }}>Monitor</option>
+                    <option value="mouse" {{ old('type') == 'laptop' ? 'selected' : '' }}>Mouse</option>
                 </select>
             </div>
             <div class="mb-4">

@@ -25,3 +25,9 @@ Route::get('/dashboard/gear/{id}', [DashboardController::class, 'gearShow'])->na
 Route::get('/dashboard/gear/{id}/edit', [DashboardController::class, 'gearEdit'])->name('dashboard.gear.edit');
 Route::post('/dashboard/gear/{id}/update', [DashboardController::class, 'gearUpdate'])->name('dashboard.gear.update');
 Route::delete('/dashboard/gear/{id}', [DashboardController::class, 'gearDestroy'])->name('dashboard.gear.destroy');
+
+// Rute untuk mengelola link YouTube di dalam dashboard
+Route::get('/dashboard/youtube', [DashboardController::class, 'youtubeIndex'])->name('dashboard.youtube.index');
+Route::get('/dashboard/youtube/edit', [DashboardController::class, 'youtubeEdit'])->name('dashboard.youtube.edit');
+Route::post('/dashboard/youtube/update', [DashboardController::class, 'youtubeUpdate'])->name('dashboard.youtube.update');
+

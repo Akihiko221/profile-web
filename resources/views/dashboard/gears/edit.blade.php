@@ -39,7 +39,10 @@
                     <option value="lensa" {{ $gear->type == 'lensa' ? 'selected' : '' }}>Lensa</option>
                     <option value="lighting" {{ $gear->type == 'lighting' ? 'selected' : '' }}>Lighting</option>
                     <option value="mic" {{ $gear->type == 'mic' ? 'selected' : '' }}>Mic</option>
-                    <option value="komputer" {{ $gear->type == 'komputer' ? 'selected' : '' }}>Komputer</option>
+                    <option value="laptop" {{ $gear->type == 'laptop' ? 'selected' : '' }}>Laptop</option>
+                    <option value="keyboard" {{ $gear->type == 'keyboard' ? 'selected' : '' }}>Keyboard</option>
+                    <option value="monitor" {{ $gear->type == 'monitor' ? 'selected' : '' }}>Monitor</option>
+                    <option value="mouse" {{ $gear->type == 'mouse' ? 'selected' : '' }}>Mouse</option>
                 </select>
             </div>
             <div class="mb-4">
@@ -56,7 +59,8 @@
                 <input type="file" name="image" id="image"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                 @if ($gear->image)
-                    <img src="{{ asset('storage/' . $gear->image) }}" alt="{{ $gear->model }}" class="w-32 h-32 mt-4">
+                    <img src="{{ asset('storage/' . $gear->image) }}" alt="{{ $gear->model }}"
+                        class="w-32 h-32 mt-4">
                 @endif
             </div>
             <div class="mb-4">

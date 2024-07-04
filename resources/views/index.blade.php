@@ -16,7 +16,7 @@
     <section class="my-8">
         <h2 class="text-xl font-semibold mb-4">Latest YouTube Video</h2>
         <div class="rounded-lg overflow-hidden">
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/xJ9zkuAplf4?si=2elb5rpEuHigYKOV"
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/DZnvcsSGrI0"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
